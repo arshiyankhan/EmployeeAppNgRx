@@ -1,0 +1,17 @@
+.form-container{
+    display: block;
+    max-width: 500px;
+    margin: auto;
+    padding-top: 100px;
+}
+.form-container mat-form-field{
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+.expanded{
+    width: 100%!important;
+    min-width: unset!important;
+}

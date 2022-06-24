@@ -1,0 +1,39 @@
+<h1 class="text-center my-4">Employee Table</h1>
+
+<ng-container *ngrxLet="tableData$; let data;">
+  <div class="container">
+    <div class="row">
+      <!-- TABLE-->
+      <ng-container *ngIf="data">
+        <div class="col-3 w-100">
+          <div class="mb-3">
+            <input [formControl]="searchControl" type="search" class="form-control" id="search"
+              placeholder="Search Employees" aria-describedby="filter" />
+          </div>
+        </div>
+        <div class="col-12">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th scope="col" *ngFor="let headerItem of headerRow">
+                  <div class="d-flex">
+                    {{ headerItem.displayName }}
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of tableData$ | async">
+                <td>{{ row.id }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.age }}</td>
+                <td>{{ row.address }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- TABLE END -->
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
